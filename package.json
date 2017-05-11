@@ -1,0 +1,9 @@
+{
+  "name": "ue4-google-assistant-apiai-webhook",
+  "version": "0.0.1",
+  "dependencies": {
+    "@google-cloud/pubsub": "^0.8.3",
+    "actions-on-google": "^1.0.8",
+    "request": "^2.81.0",
+  }
+}
