@@ -68,6 +68,20 @@ exports.webhook = function(req, res) {
 	  });
 	  break;*/
 	  
+	case 'move_character':
+		var moveDirection = req.body.result.parameters.move.direction;
+		var moveSteps = req.body.result.parameters.move.steps;
+		console.log('Moving '+moveSteps+' in the '+moveDirection + ' direction.');
+		
+		createTopic(function(topic) {
+			var pubData = { 'intent': 'move_character', 'moveDirection':moveDirection, 'moveSteps':moveSteps};
+			publishMessage(topic, JSON.stringify(pubData), function() {
+				var s = 'Moving ' + moveSteps + ' steps ' + moveDirection + '!';
+				respData.speech = s;
+				respData.displayText = s;
+				res.json(respData);
+			});
+		});
 	
 	default:
 	  console.log('switch-case in default');
