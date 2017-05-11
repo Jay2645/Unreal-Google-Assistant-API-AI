@@ -4,6 +4,6 @@
   "dependencies": {
     "@google-cloud/pubsub": "^0.8.3",
     "actions-on-google": "^1.0.8",
-    "request": "^2.81.0",
+    "request": "^2.81.0"
   }
 }
